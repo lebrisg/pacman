@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pacman
+  namespace: pacman
+  labels:
+    name: pacman
+    app: pacman
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      name: pacman
+      app: pacman
+  template:
+    metadata:
+      labels:
+        name: pacman
+        app: pacman
+    spec:
+      containers:
+      - image: quay.io/jpacker/nodejs-pacman-app:latest
+        name: pacman
+        ports:
+        - containerPort: 8080
+          name: http-server
