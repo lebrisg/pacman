@@ -26,7 +26,7 @@ spec:
           containerPort: 27017
         volumeMounts:
         - name: mongodb
-          mountPath: /data/db
+          mountPath: /bitnami/mongodb
       volumes:
       - name: mongodb
         persistentVolumeClaim:
